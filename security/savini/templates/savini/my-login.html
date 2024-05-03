@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Savini</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+
+  <!-- Favicon -->
+  {% load static %}
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}" />
+  
+  <!-- PLUGINS CSS STYLE -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick-theme.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/fancybox/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+
+  <!-- CUSTOM CSS -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <style>
+    .video-container {
+        width: 500px; /* Set the desired width */
+        height: 600px; /* Set the desired height */
+    }
+
+    .video-container video {
+        width: 100%; /* Ensure the video fills the container width */
+        height: 100%; /* Ensure the video fills the container height */
+        object-fit: cover; /* Ensure the video maintains aspect ratio and covers the container */
+    }
+</style>
+
+</head>
+
+
+
+<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+
+<section class="user-login section">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="block">
+					<div class="image align-self-center video-container">
+            <video class="img-fluid" autoplay muted >
+                <source src="{% static 'images/Login/mp4.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+          </div>
+        
+        
+        
+					<!-- Content -->
+					<div class="content text-center">
+						<div class="logo">
+							<a href="{% url '' %}"><img src="{% static 'images/logo1.png'%}" alt="logo"></a>
+						</div>
+						<div class="title-text">
+							<h3>Log in to To Your Account</h3>
+						</div>
+					
+						<form method="POST" action="#">
+							{% csrf_token %}
+						
+							<input type="text" placeholder="Username..." name="username" class="form-control main " required>
+							
+							<input type="password" placeholder="Password..." name="password" class="form-control main" required>
+              {% if login_failure_message %}
+                <div class="alert alert-warning" role="alert">
+                  {{ login_failure_message }}
+                </div>
+              {% endif %}
+							<button class="btn btn-main-sm">Log In</button>
+
+						</form>
+
+						<div class="new-acount">
+							<a href="{% url 'contact'%}#contact">Forget your password?</a>
+							<p>Don't Have an account? <a href="{% url 'register'%}"> SIGN UP</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+	<!-- To Top -->
+  <div class="scroll-top-to">
+    <i class="ti-angle-up"></i>
+  </div>
+  
+  <!-- JAVASCRIPTS -->
+  <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'plugins/bootstrap/bootstrap.min.js'%}"></script>
+  <script src="{% static 'plugins/slick/slick.min.js'%}"></script>
+  <script src="{% static 'plugins/fancybox/jquery.fancybox.min.js'%}"></script>
+  <script src="{% static 'plugins/syotimer/jquery.syotimer.min.js'%}"></script>
+  <script src="{% static 'plugins/aos/aos.js'%}"></script>
+  <!-- google map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+  <script src="plugins/google-map/gmap.js"></script>
+  
+  <script src="{% static 'js/script.js' %}"></script>
+
+
+
+</body>
+
+</html>
+
+

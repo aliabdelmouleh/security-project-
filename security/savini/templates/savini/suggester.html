@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Savini</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+
+  <!-- Favicon -->
+  {% load static %}
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}" />
+  
+  <!-- PLUGINS CSS STYLE -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick-theme.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/fancybox/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+
+  <!-- CUSTOM CSS -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <style>
+
+
+    body {
+    text-align: center;
+    padding-right: 0;
+    }
+    
+    
+    
+    
+    --- 
+    
+    body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: white;
+            }
+    
+            .container#container {
+                text-align: center;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: grey;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin-top: 100px;
+                width: 570px;
+                height: 200px;
+                display: inline-block;    
+                height: auto; 
+                display: block; 
+                margin-bottom: 20px;   
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .container1 {
+                text-align: center;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: #f0f0f0;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin-top: 20px;
+                width: 570px;
+                height: auto;
+                display: inline-block;    
+                height: auto; /* Change height to auto */
+                display: block; /* Display as block element */
+                margin-bottom: 20px;   
+                margin-left: auto;
+                margin-right: auto;
+            }
+    
+            .input-box {
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+            }
+    
+            .checkboxes {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+             margin-left: auto;
+             margin-right: auto;
+
+            }
+            
+            .checkboxes label {
+                color:black;
+                margin-bottom: 5px;
+                margin-right: 5%;
+                margin-left: auto;
+             margin-right: auto;
+
+            }
+            .checkboxes input[type="checkbox"] {
+            margin-bottom: 5px; 
+            }
+
+            #passwordInput {
+                flex: 1;
+                padding: 8px;
+                border: none;
+                border-radius: 5px;
+            }
+
+            #copyButton, button {
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                padding: 8px 12px;
+                margin-left: 10px;
+                cursor: pointer;
+            }
+
+            .range-container {
+                margin-bottom: 10px;
+                margin-top:20px ;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: auto;
+                margin-right: auto;
+
+
+            }
+
+            .range-container label {
+                color: #333;
+                margin-left: 10px;
+                margin-right: 5%;
+
+
+            }
+
+            .range-container input {
+              width: 200px;
+              margin-bottom: 0;
+              margin-right: 5%;
+
+            }
+
+        </style>
+    
+</head>
+
+<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+
+
+<nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
+  <div class="container" >
+    <a class="navbar-brand" ><img src="{% static 'images/logo1.png'%}" alt="logo"></a> 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="ti-menu"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        
+		<li class="nav-item dropdown ">
+          <a class="nav-link" href="{% url '' %}" >Home</a>
+        </li>
+
+        <li class="nav-item dropdown active @@pages">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services
+            <span><i class="ti-angle-down"></i></span>
+          </a>
+          <!-- Dropdown list -->
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item @@team" href="{% url 'dashboard' %}">Password Strength Checker</a></li>
+            <li><a class="dropdown-item @@career" href="{% url 'suggester' %}">Random Password Generator</a></li>
+            <li><a class="dropdown-item @@blog" href="{% url 'safe' %}">Passwords Safe</a></li>
+            <li><a class="dropdown-item @@FAQ" href="{% url 'FAQ' %}">FAQs</a></li>
+          </ul>
+        </li>
+        <li class="nav-item @@about">
+          <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item @@contact">
+          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<section class="feature section pt-0">
+    <div class="container">
+      <br><br>  
+      <h1> 
+            Generate random passwords
+        </h1>
+        <div class="container" id="container">
+            <div class="input-box">
+                <input type="text" id="passwordInput" placeholder="Generated Password" readonly>
+                <button id="copyButton"><ion-icon name="copy-outline"></ion-icon></button>
+                <button onclick="generatePassword()">Generate</button>
+            </div>
+        </div>
+
+        <div class="container1">    
+          <h2>Customize your password</h2> 
+          <br> 
+            <div class="range-container">
+                <label for="lengthRange"style="color:black;">Password Length: </label>
+                <input type="range" id="lengthRange" min="6" max="32" value="10" onchange="updateLength()">
+                <span id="lengthValue"> 10 </span>
+            </div>
+            <br>
+            <div class="checkboxes">
+                <label><input type="checkbox" id="uppercaseCheckbox">Uppercase</label>
+                <label><input type="checkbox" id="lowercaseCheckbox">Lowercase</label>
+                <label><input type="checkbox" id="numbersCheckbox">Numbers</label>
+                <label><input type="checkbox" id="symbolsCheckbox">Symbols</label>
+            </div>
+        </div>        
+        
+        <div class="final">
+            <h5 style="font-weight: bold;font-size: 0.8em;">
+                Your passwords are never stored. Even if they were, we have no idea who you are!
+            </h5>
+        </div>
+    </div>
+</section>
+    
+<!--============================
+=            Footer            =
+=============================-->
+<footer>
+    <div class="footer-main">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-12 m-md-auto align-self-center">
+            <div class="block">
+              <a href="{% url '' %}"><img src="{% static 'images/logoblack1rm.png'%}" alt="logo"></a>
+              <!-- Social Site Icons -->
+              <ul class="social-icon list-inline">
+                <li class="list-inline-item">
+                  <a href="https://www.facebook.com/"><i class="ti-facebook"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://twitter.com/"><i class="ti-twitter"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.instagram.com/"><i class="ti-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+            <div class="block-2">
+              <!-- heading -->
+              <h6>Services</h6>
+              <!-- links -->
+              <ul>
+                <li><a href="{% url 'dashboard' %}">Password Strength Checker</a></li>
+                <li><a href="{% url 'suggester' %}">Random Password Generator</a></li>
+                <li><a href="{% url 'safe' %}">Passwords Safe</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+            <div class="block-2">
+              <!-- heading -->
+              <h6>Join Us</h6>
+              <!-- links -->
+              <ul>
+                <li><a href="{% url 'register' %}">Singup</a></li>
+                <li><a href="{% url 'my-login' %}">Login</a></li>
+                <li><a href="{% url 'FAQ' %}">FAQs</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+            <div class="block-2">
+              <!-- heading -->
+              <h6>Company</h6>
+              <!-- links -->
+              <ul>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'team' %}">Team</a></li>
+                <li><a href="{% url 'privacy-policy'%}">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center bg-dark py-4">
+      <small class="text-secondary">Copyright &copy; <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by Us</small class="text-secondary">
+    </div>
+  </footer>
+  
+  
+    <!-- To Top -->
+    <div class="scroll-top-to">
+      <i class="ti-angle-up"></i>
+    </div>
+    
+    <!-- JAVASCRIPTS -->
+    <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap/bootstrap.min.js'%}"></script>
+    <script src="{% static 'plugins/slick/slick.min.js'%}"></script>
+    <script src="{% static 'plugins/fancybox/jquery.fancybox.min.js'%}"></script>
+    <script src="{% static 'plugins/syotimer/jquery.syotimer.min.js'%}"></script>
+    <script src="{% static 'plugins/aos/aos.js'%}"></script>
+    <!-- google map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+    <script src="plugins/google-map/gmap.js"></script>
+    
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+<script>
+
+document.getElementById("copyButton").addEventListener("click", function() {
+    var passwordInput = document.getElementById("passwordInput");
+    passwordInput.select();
+    document.execCommand("copy");
+});
+
+
+function generatePassword() {
+    var uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+    var numberChars = '0123456789';
+    var symbolChars = '!@#$%^&*()_+{}|[]\\;\',./<>?:';
+    
+    var password = '';
+    var chars = '';
+    
+    if (document.getElementById('uppercaseCheckbox').checked) {
+        chars += uppercaseChars;
+    }
+    if (document.getElementById('lowercaseCheckbox').checked) {
+        chars += lowercaseChars;
+    }
+    if (document.getElementById('numbersCheckbox').checked) {
+        chars += numberChars;
+    }
+    if (document.getElementById('symbolsCheckbox').checked) {
+        chars += symbolChars;
+    }
+    
+    var length = parseInt(document.getElementById('lengthRange').value);
+    
+    for (var i = 0; i < length; i++) {
+        var randomIndex = Math.floor(Math.random() * chars.length);
+        password += chars[randomIndex];
+    }
+    
+    document.getElementById('passwordInput').value = password;
+}
+
+
+
+    function updateLength() {
+            // Update the displayed value of password length based on the range input
+            var lengthRange = document.getElementById("lengthRange");
+            var lengthValue = document.getElementById("lengthValue");
+            lengthValue.textContent = lengthRange.value;
+        }
+</script>
+
+
+
+
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Savini</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+
+  <!-- Favicon -->
+  {% load static %}
+  {% load widget_tweaks %}
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}" />
+  
+  <!-- PLUGINS CSS STYLE -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick-theme.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/fancybox/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+
+  <!-- CUSTOM CSS -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+
+
+  <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="{% static 'images/logo1.png'%}" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="ti-menu"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          
+      <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="{% url '' %}" >Home</a>
+          </li>
+  
+          <li class="nav-item dropdown @@pages">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services
+              <span><i class="ti-angle-down"></i></span>
+            </a>
+            <!-- Dropdown list -->
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item @@team" href="{% url 'dashboard' %}">Password Strength Checker</a></li>
+              <li><a class="dropdown-item @@career" href="{% url 'suggester' %}">Random Password Generator</a></li>
+              <li><a class="dropdown-item @@blog" href="{% url 'safe' %}">Passwords Safe</a></li>
+              <li><a class="dropdown-item @@FAQ" href="{% url 'FAQ' %}">FAQs</a></li>
+            </ul>
+          </li>
+          <li class="nav-item @@about">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item active @@contact">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!--================================
+=            Page Title            =
+=================================-->
+
+<section class="section page-title">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 m-auto">
+				<!-- Page Title -->
+				<h1>Contact Us</h1>
+				<!-- Page Description -->
+				<p>Feel free to contact us.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--====  End of Page Title  ====-->
+
+
+<!--=====================================
+=            Address and Map            =
+======================================-->
+<section class="address">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-5 align-self-center">
+				<div class="block">
+					<div class="address-block text-center mb-5">
+						<div class="icon">
+							<i class="ti-mobile"></i>
+						</div>
+						<div class="details">
+							<h3>(216) 12 345 678 (TN)</h3>
+						</div>
+					</div>
+					<div class="address-block text-center">
+						<div class="icon">
+							<i class="ti-map-alt"></i>
+						</div>
+						<div class="details">
+							<h3>Bir El Kassaa Tunis، 2059</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-7 mt-5 mt-lg-0">
+				<div class="google-map">
+					<!-- Google Map -->
+					<div id="map_canvas"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.0735502571406!2d10.232777476447733!3d36.72079477226993
+            !2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd37b666388fd9%3A0xc7c9316b2397f106!2sTunis%20Business%20School!5e0!3m2!1sen!2stn!4v1713738728757!5m2!1sen!2stn"
+             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--====  End of Address and Map  ====-->
+<section class="contact-form section">
+	<div class="container" id="contact">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="mb-5 text-center">Drop us a mail</h2>
+			</div>
+			<div class="col-12">
+        <form action="" method="post">	
+          {% csrf_token %}
+          <div class="row">
+						<!-- Name -->
+						<div class="col-md-6 mb-2">
+              {{ form.name|add_class:"form-control main"|attr:"placeholder:Name" }}
+            </div>
+						<!-- Email -->
+						<div class="col-md-6 mb-2">
+              {{ form.email|add_class:"form-control main"|attr:"placeholder:Your Email Address"  }}
+						</div>
+						<!-- subject -->
+						<div class="col-md-12 mb-2">
+              {{ form.subject|add_class:"form-control main"|attr:"placeholder:Subject" }}
+						</div>
+						<!-- Message -->
+						<div class="col-md-12 mb-2">
+              {{ form.message|add_class:"form-control main"|attr:"rows:10"|attr:"placeholder:Your Message" }}
+						</div>
+						<!-- Submit Button -->
+						<div class="col-12 text-right">
+							<button class="btn btn-main-md">Submit</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--============================
+=            Footer            =
+=============================-->
+<footer>
+  <div class="footer-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 m-md-auto align-self-center">
+          <div class="block">
+            <a href="{% url '' %}"><img src="{% static 'images/logoblack1rm.png'%}" alt="logo"></a>
+            <!-- Social Site Icons -->
+            <ul class="social-icon list-inline">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/"><i class="ti-facebook"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://twitter.com/"><i class="ti-twitter"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/"><i class="ti-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+          <div class="block-2">
+            <!-- heading -->
+            <h6>Services</h6>
+            <!-- links -->
+            <ul>
+              <li><a href="{% url 'dashboard' %}">Password Strength Checker</a></li>
+			  <li><a href="{% url 'suggester' %}">Random Password Generator</a></li>
+			  <li><a href="{% url 'safe' %}">Passwords Safe</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+          <div class="block-2">
+            <!-- heading -->
+            <h6>Join Us</h6>
+            <!-- links -->
+            <ul>
+              <li><a href="{% url 'register' %}">Singup</a></li>
+              <li><a href="{% url 'my-login' %}">Login</a></li>
+			  <li><a href="{% url 'FAQ' %}">FAQs</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+          <div class="block-2">
+            <!-- heading -->
+            <h6>Company</h6>
+            <!-- links -->
+            <ul>
+              <li><a href="{% url 'about' %}">About</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+              <li><a href="{% url 'team' %}">Team</a></li>
+              <li><a href="{% url 'privacy-policy'%}">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center bg-dark py-4">
+    <small class="text-secondary">Copyright &copy; <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by Us</small class="text-secondary">
+  </div>
+</footer>
+
+
+  <!-- To Top -->
+  <div class="scroll-top-to">
+    <i class="ti-angle-up"></i>
+  </div>
+  
+<!-- JAVASCRIPTS -->
+<script src="{% static 'plugins/jquery/jquery.min.js'%}"></script>
+<script src="{% static 'plugins/bootstrap/bootstrap.min.js'%}"></script>
+<script src="{% static 'plugins/slick/slick.min.js'%}"></script>
+<script src="{% static 'plugins/fancybox/jquery.fancybox.min.js'%}"></script>
+<script src="{% static 'plugins/syotimer/jquery.syotimer.min.js'%}"></script>
+<script src="{% static 'plugins/aos/aos.js'%}"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+<script src="plugins/google-map/gmap.js"></script>
+
+<script src="{% static 'js/script.js'%}"></script>
+</body>
+
+</html>

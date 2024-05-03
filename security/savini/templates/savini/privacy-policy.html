@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Savini</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+
+  <!-- Favicon -->
+  {% load static %} 
+
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}" />
+  
+  <!-- PLUGINS CSS STYLE -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick-theme.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/fancybox/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+
+  <!-- CUSTOM CSS -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+
+
+  <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="{% static 'images/logo1.png'%}" alt="logo"></a> 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="ti-menu"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          
+      <li class="nav-item dropdown ">
+            <a class="nav-link" href="{% url '' %}" >Home</a>
+          </li>
+  
+          <li class="nav-item dropdown @@pages">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services
+              <span><i class="ti-angle-down"></i></span>
+            </a>
+            <!-- Dropdown list -->
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item @@team" href="{% url 'dashboard' %}">Password Strength Checker</a></li>
+              <li><a class="dropdown-item @@career" href="{% url 'suggester' %}">Random Password Generator</a></li>
+              <li><a class="dropdown-item @@blog" href="{% url 'safe' %}">Passwords Safe</a></li>
+              <li><a class="dropdown-item @@FAQ" href="{% url 'FAQ' %}">FAQs</a></li>
+            </ul>
+          </li>
+          <li class="nav-item active @@about">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item @@contact">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!--================================
+=            Page Title            =
+=================================-->
+
+<section class="section page-title">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 m-auto">
+				<!-- Page Title -->
+				<h1>Privacy Policy</h1>
+				<!-- Page Description -->
+				<p>Our privacy policy explains how we handle your personal information, ensuring its security and outlining your rights and options regarding your data.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--====  End of Page Title  ====-->
+
+
+<!--====================================
+=            Privacy Policy            =
+=====================================-->
+<section class="privacy section pt-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<nav class="privacy-nav">
+					<ul>
+						<li><a class="nav-link scrollTo" href="#userLicense" class="scrollTo">User License</a></li>
+						<li><a class="nav-link scrollTo" href="#disclaimer" class="scrollTo">Disclaimer</a></li>
+						<li><a class="nav-link scrollTo" href="#limitations" class="scrollTo">Limitations</a></li>
+						<li><a class="nav-link scrollTo" href="#governigLaw" class="scrollTo">Governing Law</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-lg-9">
+				<div class="block">
+					<!-- User License -->
+					<div id="userLicense" class="policy-item">
+						<div class="title">
+							<h3>Use License</h3>
+						</div>
+						<div class="policy-details">
+							<p>The User License section governs the terms and conditions under which users are granted access to and use our website and its services. By accessing or using our website, users agree to abide by these terms. Users are granted a limited, non-exclusive, and revocable license to access and use the content and services provided on the website for personal or non-commercial purposes. This license does not grant users ownership rights to any content or intellectual property displayed on the website. Users must refrain from engaging in any activities that may violate the rights of others or disrupt the functioning of the website.</p>
+						</div>
+					</div>
+					<!-- Disclaimer -->
+					<div id="disclaimer" class="policy-item">
+						<div class="title">
+							<h3>Disclaimer</h3>
+						</div>
+						<div class="policy-details">
+							<p>The Disclaimer section clarifies that the information provided on our website is for general informational purposes only and should not be construed as professional advice. While we strive to ensure the accuracy and reliability of the information presented, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the information, products, services, or related graphics contained on the website. Users acknowledge that any reliance on such information is at their own risk and that we shall not be held liable for any losses or damages arising from the use of the website.</p>
+						</div>
+					</div>
+					<!-- Limitations -->
+					<div id="limitations" class="policy-item">
+						<div class="title">
+							<h3>Limitations</h3>
+						</div>
+						<div class="policy-details">
+							<p>The Limitations section outlines the extent of our liability and disclaims any warranties, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement. We shall not be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in any way connected with the use or inability to use our website or its services, even if we have been advised of the possibility of such damages. Users agree that any reliance on the information provided on the website is solely at their own risk.</p>
+						</div>
+					</div>
+					<!-- Governing Law -->
+					<div id="governigLaw" class="policy-item">
+						<div class="title">
+							<h3>Governing Law</h3>
+						</div>
+						<div class="policy-details">
+							<p>The Governing Law section specifies that these terms and conditions shall be governed by and construed in accordance with the laws of Tunisia. Any disputes relating to these terms and conditions shall be subject to the exclusive jurisdiction of the courts of Tunisia. Users agree to submit to the personal jurisdiction of such courts for the purpose of litigating any such disputes.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--====  End of Privacy Policy  ====-->
+
+<!--============================
+=            Footer            =
+=============================-->
+<footer>
+  <div class="footer-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 m-md-auto align-self-center">
+          <div class="block">
+            <a href="{% url '' %}"><img src="{% static 'images/logoblack1rm.png'%}" alt="logo"></a>
+            <!-- Social Site Icons -->
+            <ul class="social-icon list-inline">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/"><i class="ti-facebook"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://twitter.com/"><i class="ti-twitter"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/"><i class="ti-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+          <div class="block-2">
+            <!-- heading -->
+            <h6>Services</h6>
+            <!-- links -->
+            <ul>
+              <li><a href="{% url 'dashboard' %}">Password Strength Checker</a></li>
+			  <li><a href="{% url 'suggester' %}">Random Password Generator</a></li>
+			  <li><a href="{% url 'safe' %}">Passwords Safe</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+          <div class="block-2">
+            <!-- heading -->
+            <h6>Join Us</h6>
+            <!-- links -->
+            <ul>
+              <li><a href="{% url 'register' %}">Singup</a></li>
+              <li><a href="{% url 'my-login' %}">Login</a></li>
+			  <li><a href="{% url 'FAQ' %}">FAQs</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+          <div class="block-2">
+            <!-- heading -->
+            <h6>Company</h6>
+            <!-- links -->
+            <ul>
+              <li><a href="{% url 'about' %}">About</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+              <li><a href="{% url 'team' %}">Team</a></li>
+              <li><a href="{% url 'privacy-policy'%}">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center bg-dark py-4">
+    <small class="text-secondary">Copyright &copy; <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by Us</small class="text-secondary">
+  </div>
+</footer>
+
+
+  <!-- To Top -->
+  <div class="scroll-top-to">
+    <i class="ti-angle-up"></i>
+  </div>
+  
+  <!-- JAVASCRIPTS -->
+  <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'plugins/bootstrap/bootstrap.min.js'%}"></script>
+  <script src="{% static 'plugins/slick/slick.min.js'%}"></script>
+  <script src="{% static 'plugins/fancybox/jquery.fancybox.min.js'%}"></script>
+  <script src="{% static 'plugins/syotimer/jquery.syotimer.min.js'%}"></script>
+  <script src="{% static 'plugins/aos/aos.js'%}"></script>
+  <!-- google map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+  <script src="plugins/google-map/gmap.js"></script>
+  
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

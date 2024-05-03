@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Savini</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+
+  <!-- Favicon -->
+  {% load static %}
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}" />
+  
+  <!-- PLUGINS CSS STYLE -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick-theme.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/fancybox/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+
+  <!-- CUSTOM CSS -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <style>
+        
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+----
+
+
+
+body {
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column
+        }
+
+        .container1  {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: grey;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: auto;
+            height: 200px;
+            display: block; 
+            margin-top: 175px;
+            margin-left: 5%;
+            margin-right: 5%;    
+            margin-bottom: 0; /* Ensure no extra bottom margin */
+        
+        }
+
+        .input-box {
+            margin-bottom: 20px;
+        }
+
+        .input-box select {
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        }
+
+        .input-box input[type="text"] {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .input-box button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .input-box button:hover {
+            background-color: #45a049;
+        }
+
+
+        #add-container-button {
+        color: white;
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width:130px;
+        height:50px;
+        background:#162938;
+        border:2px solid white;
+        font-size:1.1em;
+        font-weight:500;
+        border-radius:6px;
+        cursor:pointer;
+        outline:none;
+        text-align: center;
+        vertical-align: middle; 
+        }
+       
+        #container-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 5px;
+        justify-content: center; /* Centers the grid horizontally */
+        align-items: center; /* Centers the grid vertically */
+        margin-top: 20px; /* Adjust margin as needed */
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+        #search-container {
+        text-align: right;
+        position: absolute;
+        top: 15%;        
+        right:5%;
+        transform: translate(23%, -50%);
+
+        }
+
+        #search-button{
+            color:white;
+            width:100px;
+            height:50px;
+            background:#162938;
+            border:2px solid white;
+            font-size:1.1em;
+            font-weight:500;
+            border-radius:6px;
+            cursor:pointer;
+        }
+        #search-input{
+            color:#162938;
+            width:200px;
+            height:50px;
+            background:white;
+            border:2px solid #162938;
+            font-size:0.8em;
+            font-weight:300;
+            border-radius:6px;
+        }
+
+        @media screen and (max-height: 800px) {
+        #add-container-button {
+        top: 22%; /* Add margin between navigation and button on smaller screens */
+        }
+        #search-container{
+            top: 22%; /* Add margin between navigation and button on smaller screens */
+            margin-right: 5%;
+        }
+    }
+    .flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+    </style>
+   
+</head>
+<div class="flex-wrapper ">
+<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+
+
+  <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
+    <div class="container">
+      <a class="navbar-brand" ><img src="{% static 'images/logo1.png'%}" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="ti-menu"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          
+      <li class="nav-item dropdown ">
+            <a class="nav-link" href="{% url '' %}" >Home</a>
+          </li>
+  
+          <li class="nav-item dropdown active @@pages">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services
+              <span><i class="ti-angle-down"></i></span>
+            </a>
+            <!-- Dropdown list -->
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item @@team" href="{% url 'dashboard' %}">Password Strength Checker</a></li>
+              <li><a class="dropdown-item @@career" href="{% url 'suggester' %}">Random Password Generator</a></li>
+              <li><a class="dropdown-item @@blog" href="{% url 'safe' %}">Passwords Safe</a></li>
+              <li><a class="dropdown-item @@FAQ" href="{% url 'FAQ' %}">FAQs</a></li>
+            </ul>
+          </li>
+          <li class="nav-item @@about">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item @@contact">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+          <li class="nav-item @@contact">
+              <a class="nav-link" href="{% url 'user-logout' %}">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- Inside your HTML body -->
+<div id="search-container">
+    <input type="text" id="search-input" placeholder=" Search for app name..." >
+    <button id="search-button">Search</button>
+</div>
+    <button id="add-container-button">Add Password </button>
+
+    
+<section class="feature section pt-0">
+  <div class="container">
+    <div id="container-list"></div>
+  </div>
+</section>
+
+
+<script>
+// Get references to the search input and search button
+var searchInput = document.getElementById("search-input");
+var searchButton = document.getElementById("search-button");
+
+// Add event listener to the search button
+searchButton.addEventListener("click", function() {
+    // Get the value entered by the user in the search input
+    var searchText = searchInput.value.toLowerCase().trim();
+
+    // Get all containers
+    var containers = document.getElementsByClassName("container1");
+
+    // Loop through all containers
+    for (var i = 0; i < containers.length; i++) {
+        var container = containers[i];
+        var appName = container.querySelector("input[name='app_name']").value.toLowerCase();
+
+        // Check if the app name contains the search text
+        if (appName.includes(searchText)) {
+            container.style.display = "block"; // Show the container if it matches
+        } else {
+            container.style.display = "none"; // Hide the container if it doesn't match
+        }
+    }
+});
+
+</script>
+
+
+<script>
+    var initialData = {
+        app_names: "{{ initial_data.app_name }}".split(' '),
+        passwords: "{{ initial_data.password }}".split(' ')
+    };
+
+    function isArrayEmpty(array) {
+    return array.every(function(element) {
+        return element === '';
+    });
+    }
+
+    if (isArrayEmpty(initialData.app_names) && isArrayEmpty(initialData.passwords)) {
+        initialData.app_names = [];
+        initialData.passwords = [];
+    }
+
+
+    function generateForms() {
+    var container = document.getElementById("container-list");
+
+    for (var i = 0; i < initialData.app_names.length; i++) {
+        var div = document.createElement("div");
+        div.className = "container1";
+        div.innerHTML = `
+        <div class="input-box">
+        <form id="safe-form" method="post">
+            {% csrf_token %}
+            <label for="app_name" style="color:black;">App Name:</label>
+            <input type="text" id="app_name-${i}" name="app_name" value="${initialData.app_names[i]}" readonly required>
+            <label for="password" style="color:black;">Password:</label>
+            <input type="text" id="password-${i}" name="password" autocomplete="off" value="${initialData.passwords[i]}" required>
+            <button type="submit" name="action" value="update" style="background-color: green;">Update</button>
+            <button type="submit" name="action" value="delete" style="background-color: red;">Delete</button>
+        </form>
+        </div>
+        `;
+        container.appendChild(div);
+
+        // Add event listeners to input fields for restricting spaces
+        var appNameInput = document.getElementById(`app_name-${i}`);
+        var passwordInput = document.getElementById(`password-${i}`);
+
+        appNameInput.addEventListener("input", function(event) {
+            if (/\s/.test(this.value)) {
+                this.setCustomValidity("App name cannot contain spaces.");
+            } else {
+                this.setCustomValidity("");
+            }
+        });
+
+        passwordInput.addEventListener("input", function(event) {
+            if (/\s/.test(this.value)) {
+                this.setCustomValidity("Password cannot contain spaces.");
+            } else {
+                this.setCustomValidity("");
+            }
+        });
+
+    }
+}
+
+
+    // Call the function to generate forms when the page is loaded
+    window.onload = generateForms;
+    </script>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    
+    <script>
+        // Function to create a new container with the specified HTML structure
+        function createContainer() {
+            var container = document.createElement("div");
+            container.className = "container1";
+    
+            var inputBox = document.createElement("div");
+            inputBox.className = "input-box";
+    
+            var form = document.createElement("form");
+            form.className = "safe-form";
+            form.method = "post";
+    
+            // Append CSRF token
+            var csrfTokenInput = document.createElement("input");
+            csrfTokenInput.type = "hidden";
+            csrfTokenInput.name = "csrfmiddlewaretoken";
+            csrfTokenInput.value = "{{ csrf_token }}";
+            form.appendChild(csrfTokenInput);
+    
+            var appNameLabel = document.createElement("label");
+            appNameLabel.htmlFor = "app_name";
+            appNameLabel.textContent = "App Name:";
+            appNameLabel.style.color = "black";
+            form.appendChild(appNameLabel);
+    
+            var appNameInput = document.createElement("input");
+            appNameInput.type = "text";
+            appNameInput.name = "app_name";
+            appNameInput.required = true;
+            form.appendChild(appNameInput);
+    
+            var passwordLabel = document.createElement("label");
+            passwordLabel.htmlFor = "password";
+            passwordLabel.textContent = "Password:";
+            passwordLabel.style.color = "black";
+            form.appendChild(passwordLabel);
+    
+            var passwordInput = document.createElement("input");
+            passwordInput.type = "text";
+            passwordInput.name = "password";
+            passwordInput.autocomplete = "off";
+            passwordInput.required = true;
+            form.appendChild(passwordInput);
+    
+            appNameInput.addEventListener("input", function(event) {
+    if (/\s/.test(appNameInput.value)) {
+        appNameInput.setCustomValidity("App name cannot contain spaces.");
+        appNameInput.title = "App name cannot contain spaces."; // Set the tooltip text
+    } else {
+        appNameInput.setCustomValidity("");
+        appNameInput.title = ""; // Clear the tooltip text
+    }
+});
+
+passwordInput.addEventListener("input", function(event) {
+    if (/\s/.test(passwordInput.value)) {
+        passwordInput.setCustomValidity("Password cannot contain spaces.");
+        passwordInput.title = "Password cannot contain spaces."; // Set the tooltip text
+    } else {
+        passwordInput.setCustomValidity("");
+        passwordInput.title = ""; // Clear the tooltip text
+    }
+});
+
+
+var saveButton = document.createElement("button");
+saveButton.type = "button";
+saveButton.textContent = "Save";
+form.appendChild(saveButton);
+
+saveButton.addEventListener("click", function() {
+    // Check if the form is valid
+    if (form.checkValidity()) {
+        // Send form data to the server via AJAX
+        var formData = new FormData(form);
+        fetch("{% url 'save_app_data' %}", {
+            method: "POST",
+            body: formData,
+            headers: {
+                'X-CSRFToken': "{{ csrf_token }}"
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert("Saved successfully!");
+                location.reload() ;
+
+            } else {
+                alert("Error saving data. Please try again.");
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    } else {
+        // If the form is invalid, display the validation message
+        form.reportValidity();
+    }
+});
+            inputBox.appendChild(form);
+            container.appendChild(inputBox);
+    
+            return container;
+        }
+    
+        // Event listener for the button click
+        document.getElementById("add-container-button").addEventListener("click", function() {
+            // Create a new container and append it to the container list
+            var containerList = document.getElementById("container-list");
+            containerList.appendChild(createContainer());
+        });
+    </script>
+
+
+</body>
+<!--============================
+=            Footer            =
+=============================-->
+<footer>
+  <div class="footer-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 m-md-auto align-self-center">
+          <div class="block">
+            <a href="{% url '' %}"><img src="{% static 'images/logoblack1rm.png'%}" alt="logo"></a>
+            <!-- Social Site Icons -->
+            <ul class="social-icon list-inline">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/"><i class="ti-facebook"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://twitter.com/"><i class="ti-twitter"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/"><i class="ti-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+          <div class="block-2">
+            <!-- heading -->
+            <h6>Services</h6>
+            <!-- links -->
+            <ul>
+              <li><a href="{% url 'dashboard' %}">Password Strength Checker</a></li>
+              <li><a href="{% url 'suggester' %}">Random Password Generator</a></li>
+              <li><a href="{% url 'safe' %}">Passwords Safe</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+          <div class="block-2">
+            <!-- heading -->
+            <h6>Join Us</h6>
+            <!-- links -->
+            <ul>
+              <li><a href="{% url 'register' %}">Singup</a></li>
+              <li><a href="{% url 'my-login' %}">Login</a></li>
+              <li><a href="{% url 'FAQ' %}">FAQs</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+          <div class="block-2">
+            <!-- heading -->
+            <h6>Company</h6>
+            <!-- links -->
+            <ul>
+              <li><a href="{% url 'about' %}">About</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+              <li><a href="{% url 'team' %}">Team</a></li>
+              <li><a href="{% url 'privacy-policy'%}">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center bg-dark py-4">
+    <small class="text-secondary">Copyright &copy; <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by Us</small class="text-secondary">
+  </div>
+</footer>
+</div>
+
+  <!-- To Top -->
+  <div class="scroll-top-to">
+    <i class="ti-angle-up"></i>
+  </div>
+  
+  <!-- JAVASCRIPTS -->
+  <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'plugins/bootstrap/bootstrap.min.js'%}"></script>
+  <script src="{% static 'plugins/slick/slick.min.js'%}"></script>
+  <script src="{% static 'plugins/fancybox/jquery.fancybox.min.js'%}"></script>
+  <script src="{% static 'plugins/syotimer/jquery.syotimer.min.js'%}"></script>
+  <script src="{% static 'plugins/aos/aos.js'%}"></script>
+  <!-- google map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+  <script src="plugins/google-map/gmap.js"></script>
+  
+  <script src="{% static 'js/script.js' %}"></script>
+  
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

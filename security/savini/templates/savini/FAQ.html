@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Savini</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+
+  <!-- Favicon -->
+  {% load static %} 
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}" />
+  
+  <!-- PLUGINS CSS STYLE -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick-theme.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/fancybox/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+
+  <!-- CUSTOM CSS -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+
+
+	<nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
+		<div class="container">
+		  <a class="navbar-brand" href="#"><img src="{% static 'images/logo1.png'%}" alt="logo"></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="ti-menu"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+			  
+			  <li class="nav-item dropdown ">
+				<a class="nav-link dropdown-toggle" href="{% url '' %}" >Home</a>
+			  </li>
+	  
+			  <li class="nav-item dropdown active @@pages">
+				<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services
+				  <span><i class="ti-angle-down"></i></span>
+				</a>
+				<!-- Dropdown list -->
+				<ul class="dropdown-menu">
+				  <li><a class="dropdown-item @@team" href="{% url 'dashboard' %}">Password Strength Checker</a></li>
+				  <li><a class="dropdown-item @@career" href="{% url 'suggester' %}">Random Password Generator</a></li>
+				  <li><a class="dropdown-item @@blog" href="{% url 'safe' %}">Passwords Safe</a></li>
+				  <li><a class="dropdown-item @@FAQ" href="{% url 'FAQ' %}">FAQs</a></li>
+				</ul>
+			  </li>
+			  <li class="nav-item @@about">
+				<a class="nav-link" href="{% url 'about' %}">About</a>
+			  </li>
+			  <li class="nav-item @@contact">
+				<a class="nav-link" href="{% url 'contact' %}">Contact</a>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
+
+<!--================================
+=            Page Title            =
+=================================-->
+
+<section class="section page-title">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 m-auto">
+				<!-- Page Title -->
+				<h1>Frequently Asked Questions</h1>
+				<!-- Page Description -->
+				<p>Get answers to common questions and concerns about our services, security measures, and more in our FAQ section.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--====  End of Page Title  ====-->
+
+
+<!--=================================
+=            FAQ Section            =
+==================================-->
+<section class="faq section pt-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 m-auto">
+				<div class="block shadow">
+					<!-- Getting Started -->
+					<div class="faq-item">
+						<!-- Title -->
+						<div class="faq-item-title">
+							<h2>
+								Password Strength Checker
+							</h2>
+						</div>
+						<!-- Get Started Accordion -->
+						<div id="gstAccordion" data-children=".item">
+						  <!-- Accordion Item 01 -->
+						  <div class="item">
+						  	<div class="item-link">
+							    <a data-toggle="collapse" data-parent="#gstAccordion" href="#gstAccordion1">
+									How does the Password Strength Checker work?							    </a>
+						  	</div>
+						    <div id="gstAccordion1" class="collapse show accordion-block">
+						      <p>
+						        Our Password Strength Checker evaluates the security level of your password based on factors like length, complexity, and uniqueness, providing feedback on whether it's weak, medium, or strong.
+						      </p>
+						    </div>
+						  </div>
+						  <!-- Accordion Item 02 -->
+						  <div class="item">
+						  	<div class="item-link">
+							    <a data-toggle="collapse" data-parent="#gstAccordion" href="#gstAccordion2">
+									Why is a strong password important?							    </a>
+						  	</div>
+						    <div id="gstAccordion2" class="collapse accordion-block">
+						      <p>
+						        A strong password helps protect your accounts from unauthorized access and potential security breaches, enhancing the overall security of your online accounts and sensitive information.
+						      </p>
+						    </div>
+						  </div>
+						  <!-- Accordion Item 03 -->
+						  <div class="item">
+						  	<div class="item-link">
+							    <a data-toggle="collapse" data-parent="#gstAccordion" href="#gstAccordion3">
+
+									Can the Password Strength Checker detect common or easily guessable passwords?							    </a>
+						  	</div>
+						    <div id="gstAccordion3" class="collapse accordion-block">
+						      <p>
+						        Yes, our Password Strength Checker incorporates algorithms to detect common passwords, dictionary words, and easily guessable patterns, providing recommendations for stronger alternatives.
+						      </p>
+						    </div>
+						  </div>
+						  <!-- Accordion Item 04 -->
+						  <div class="item">
+						  	<div class="item-link">
+							    <a data-toggle="collapse" data-parent="#gstAccordion" href="#gstAccordion4">
+									Is the Password Strength Checker compatible with all types of passwords?							    </a>
+						  	</div>
+						    <div id="gstAccordion4" class="collapse accordion-block">
+						      <p>
+						        Our Password Strength Checker is designed to analyze passwords of varying lengths and complexities, including those with special characters, numbers, and uppercase letters, ensuring comprehensive security assessments for all types of passwords.
+						      </p>
+						    </div>
+						  </div>
+						</div>
+					</div>
+					<!-- Account Accordion -->
+					<div class="faq-item">
+						<!-- Title -->
+						<div class="faq-item-title">
+							<h2>
+								Random Password Generator
+							</h2>
+						</div>
+						<!-- Account Accordion -->
+						<div id="accountAccordion" data-children=".item">
+						  <!-- Accordion Item 01 -->
+						  <div class="item">
+						  	<div class="item-link">
+							    <a data-toggle="collapse" data-parent="#accountAccordion" href="#accountAccordion1">
+									What does the Random Password Generator do?							    </a>
+						  	</div>
+						    <div id="accountAccordion1" class="collapse accordion-block">
+						      <p>
+								Our Random Password Generator creates unique and secure passwords using random combinations of characters, numbers, and symbols, ensuring enhanced security for your online accounts.						      </p>
+						    </div>
+						  </div>
+						  <!-- Accordion Item 02 -->
+						  <div class="item">
+						  	<div class="item-link">
+							    <a data-toggle="collapse" data-parent="#accountAccordion" href="#accountAccordion2">
+									How can I customize the generated passwords?							    </a>
+						  	</div>
+						    <div id="accountAccordion2" class="collapse accordion-block">
+						      <p>
+								You can specify the length and complexity of the passwords generated by our tool, allowing you to tailor them to meet specific security requirements for different accounts.						      </p>
+						    </div>
+						  </div>
+						  <!-- Accordion Item 03 -->
+						  <div class="item">
+						  	<div class="item-link">
+							    <a data-toggle="collapse" data-parent="#accountAccordion" href="#accountAccordion3">
+									Can I specify specific requirements for the generated passwords, such as excluding certain characters?							    </a>
+						  	</div>
+						    <div id="accountAccordion3" class="collapse accordion-block">
+						      <p>
+								Yes, our Random Password Generator offers customizable options, allowing users to specify parameters such as password length, character types, and exclusion rules to generate passwords that meet their unique security preferences.						      </p>
+						    </div>
+						  </div>
+						  <!-- Accordion Item 04 -->
+						  <div class="item">
+						  	<div class="item-link">
+							    <a data-toggle="collapse" data-parent="#accountAccordion" href="#accountAccordion4">
+									Are the passwords generated by the Random Password Generator truly random and secure?							    </a>
+						  	</div>
+						    <div id="accountAccordion4" class="collapse accordion-block">
+						      <p>
+								Absolutely, our Random Password Generator utilizes advanced algorithms to generate passwords that are truly random and cryptographically secure, ensuring robust protection against unauthorized access and security breaches.						      </p>
+						    </div>
+						  </div>
+						</div>
+					</div>
+					<!-- Pricing & License Accordion -->
+					<div class="faq-item">
+						<!-- Title -->
+						<div class="faq-item-title">
+							<h2>
+								Passwords Safe							
+							</h2>
+						</div>
+						<!-- Account Accordion -->
+						<div id="plAccordion" data-children=".item">
+						  <!-- Accordion Item 01 -->
+						  <div class="item">
+						  	<div class="item-link">
+							    <a data-toggle="collapse" data-parent="#plAccordion" href="#plAccordion1">
+									How does Passwords Safe work?							    </a>
+						  	</div>
+						    <div id="plAccordion1" class="collapse accordion-block">
+						      <p>
+								Passwords Safe provides users with a secure platform to store their passwords, eliminating the need to remember multiple passwords for different accounts. Users can input their passwords into the system, which stores them securely in a database.						      </p>
+						    </div>
+						  </div>
+						  <!-- Accordion Item 02 -->
+						  <div class="item">
+						  	<div class="item-link">
+							    <a data-toggle="collapse" data-parent="#plAccordion" href="#plAccordion2">
+									Is my data safe in Passwords Safe?							    </a>
+						  	</div>
+						    <div id="plAccordion2" class="collapse accordion-block">
+						      <p>
+								Yes, we prioritize the security of your data. Passwords stored in our system are encrypted to ensure that only authorized users can access them, providing a safe and reliable solution for managing your passwords.						      </p>
+						    </div>
+						  </div>
+						  <!-- Accordion Item 03 -->
+						  <div class="item">
+						  	<div class="item-link">
+							    <a data-toggle="collapse" data-parent="#plAccordion" href="#plAccordion3">
+									How does Passwords Safe ensure the confidentiality of stored passwords?							    </a>
+						  	</div>
+						    <div id="plAccordion3" class="collapse accordion-block">
+						      <p>
+								Passwords Safe employs industry-standard encryption techniques to safeguard stored passwords, ensuring that they are securely encrypted both during transmission and while stored in the database, minimizing the risk of unauthorized access.						      </p>
+						    </div>
+						  </div>
+						  <!-- Accordion Item 04 -->
+						  <div class="item">
+						  	<div class="item-link">
+							    <a data-toggle="collapse" data-parent="#plAccordion" href="#plAccordion4">
+									Can I access my stored passwords from multiple devices or locations?							    </a>
+						  	</div>
+						    <div id="plAccordion4" class="collapse accordion-block">
+						      <p>
+								Yes, Passwords Safe offers seamless access to stored passwords from any device or location with an internet connection. Simply log in to your account to securely retrieve and manage your passwords anytime, anywhere.						      </p>
+						    </div>
+						  </div>
+						</div>
+					</div>
+					<!-- Getting Started Accordion -->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--====  End of FAQ Section  ====-->
+
+<!--============================
+=            Footer            =
+=============================-->
+<footer>
+	<div class="footer-main">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-lg-4 col-md-12 m-md-auto align-self-center">
+			<div class="block">
+			  <a href="{% url '' %}"><img src="{% static 'images/logoblack1rm.png'%}" alt="logo"></a>
+			  <!-- Social Site Icons -->
+			  <ul class="social-icon list-inline">
+				<li class="list-inline-item">
+				  <a href="https://www.facebook.com/"><i class="ti-facebook"></i></a>
+				</li>
+				<li class="list-inline-item">
+				  <a href="https://twitter.com/"><i class="ti-twitter"></i></a>
+				</li>
+				<li class="list-inline-item">
+				  <a href="https://www.instagram.com/"><i class="ti-instagram"></i></a>
+				</li>
+			  </ul>
+			</div>
+		  </div>
+		  <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+			<div class="block-2">
+			  <!-- heading -->
+			  <h6>Services</h6>
+			  <!-- links -->
+			  <ul>
+				<li><a href="{% url 'dashboard' %}">Password Strength Checker</a></li>
+				<li><a href="{% url 'suggester' %}">Random Password Generator</a></li>
+				<li><a href="{% url 'safe' %}">Passwords Safe</a></li>
+			  </ul>
+			</div>
+		  </div>
+		  <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+			<div class="block-2">
+			  <!-- heading -->
+			  <h6>Join Us</h6>
+			  <!-- links -->
+			  <ul>
+				<li><a href="{% url 'register' %}">Singup</a></li>
+				<li><a href="{% url 'my-login' %}">Login</a></li>
+				<li><a href="{% url 'FAQ' %}">FAQs</a></li>
+			  </ul>
+			</div>
+		  </div>
+		  
+		  <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+			<div class="block-2">
+			  <!-- heading -->
+			  <h6>Company</h6>
+			  <!-- links -->
+			  <ul>
+				<li><a href="{% url 'about' %}">About</a></li>
+				<li><a href="{% url 'contact' %}">Contact</a></li>
+				<li><a href="{% url 'team' %}">Team</a></li>
+				<li><a href="{% url 'privacy-policy'%}">Privacy Policy</a></li>
+			  </ul>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<div class="text-center bg-dark py-4">
+	  <small class="text-secondary">Copyright &copy; <script>document.write(new Date().getFullYear())</script>. Designed &amp; Developed by Us</small class="text-secondary">
+	</div>
+  </footer>
+
+
+  <!-- To Top -->
+  <div class="scroll-top-to">
+    <i class="ti-angle-up"></i>
+  </div>
+  
+<!-- JAVASCRIPTS -->
+<script src="{% static 'plugins/jquery/jquery.min.js'%}"></script>
+<script src="{% static 'plugins/bootstrap/bootstrap.min.js'%}"></script>
+<script src="{% static 'plugins/slick/slick.min.js'%}"></script>
+<script src="{% static 'plugins/fancybox/jquery.fancybox.min.js'%}"></script>
+<script src="{% static 'plugins/syotimer/jquery.syotimer.min.js'%}"></script>
+<script src="{% static 'plugins/aos/aos.js'%}"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+<script src="plugins/google-map/gmap.js"></script>
+
+<script src="{% static 'js/script.js'%}"></script>
+</body>
+
+</html>
